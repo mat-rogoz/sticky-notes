@@ -3,8 +3,8 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "lib": ["ES2020"],
-    "target": "ES2020",
+    "lib": ["es2018"],
+    "target": "es2018",
     "rootDir": "./",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,9 +13,12 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "./build",
+    "sourceMap": true,
+    "strictPropertyInitialization": false
   },
   "include": ["./**/*"],
-  "exclude": [
-    "node_modules",
-   ],
+  "exclude": ["node_modules"]
 }
