@@ -1,0 +1,23 @@
+{
+  "name": "sticky-notes",
+  "version": "1.0.0",
+  "description": "Express Rest API for a note management application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mat-rogoz/sticky-notes.git"
+  },
+  "author": "Mateusz R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mat-rogoz/sticky-notes/issues"
+  },
+  "homepage": "https://github.com/mat-rogoz/sticky-notes#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "sqlite3": "^5.0.2"
+  }
+}
