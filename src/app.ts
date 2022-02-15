@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import 'reflect-metadata';
 import { createConnection } from 'typeorm';
-import config from './../config/default';
+import config from '../config/config';
 import logger from './utils/logger';
 
 const app = express();
