@@ -7,12 +7,12 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class Notes {
+export class Note {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  tittle: string;
+  title: string;
 
   @Column()
   message: string;
