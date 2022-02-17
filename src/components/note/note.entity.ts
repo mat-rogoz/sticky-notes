@@ -20,6 +20,6 @@ export class Note {
   @CreateDateColumn()
   createdAt: Date;
 
-  @UpdateDateColumn({ nullable: true })
+  @UpdateDateColumn({ nullable: true, default: () => null })
   updatedAt: Date;
 }

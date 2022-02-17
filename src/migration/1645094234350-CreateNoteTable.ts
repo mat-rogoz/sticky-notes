@@ -1,7 +1,7 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class CreateNoteTable1644982008515 implements MigrationInterface {
-    name = 'CreateNoteTable1644982008515'
+export class CreateNoteTable1645094234350 implements MigrationInterface {
+    name = 'CreateNoteTable1645094234350'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`
@@ -10,7 +10,7 @@ export class CreateNoteTable1644982008515 implements MigrationInterface {
                 "title" varchar NOT NULL,
                 "message" varchar NOT NULL,
                 "createdAt" datetime NOT NULL DEFAULT (datetime('now')),
-                "updatedAt" datetime DEFAULT (datetime('now'))
+                "updatedAt" datetime
             )
         `);
     }
