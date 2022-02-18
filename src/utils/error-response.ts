@@ -4,6 +4,6 @@ export type ApiError = {
 };
 
 export const ErrorResponse = (code: number, message: string): ApiError => ({
-  code: code,
-  message: message,
+  code,
+  message,
 });

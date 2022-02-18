@@ -7,7 +7,7 @@ import routes from './routes';
 import logger from './utils/logger';
 
 const app = express();
-const port = config.port;
+const { port } = config;
 
 createConnection()
   .then(() => {

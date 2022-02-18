@@ -3,9 +3,7 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "lib": ["es2018"],
-    "target": "es2018",
-    "rootDir": "./src",
+    "lib": ["es2020"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
@@ -17,8 +15,10 @@
     "experimentalDecorators": true,
     "outDir": "./build",
     "sourceMap": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "allowJs": true,
+    "baseUrl": "./src"
   },
-  "include": ["./**/*"],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules"]
 }
