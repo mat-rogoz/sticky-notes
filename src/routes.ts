@@ -1,9 +1,11 @@
 import { Express, Response } from 'express';
+import { object } from 'yup';
 import validateRequest from './middlewere/validate-request';
 import {
   createNoteSchema,
   deleteNoteSchema,
-  getNoteSchema,
+  getNotesSchema,
+  getSingleNoteSchema,
   updateNoteSchema,
 } from './components/note/note.schema';
 import {
@@ -13,14 +15,17 @@ import {
   getNoteHandler,
   updateNoteHandler,
 } from './components/note/note.controller';
-import { object } from 'yup';
 
 const routes = (app: Express) => {
-  app.get('/health', ({}, res: Response) => res.sendStatus(200));
+  app.get('/health', (_, res: Response) => res.sendStatus(200));
 
-  app.get('/v1/notes', validateRequest(object({})), getAllNotesHandler);
-  app.get('/v1/notes/:id', validateRequest(getNoteSchema), getNoteHandler);
+  app.get('/v1/notes', validateRequest(getNotesSchema), getAllNotesHandler);
   app.post('/v1/notes', validateRequest(createNoteSchema), createNoteHandler);
+  app.get(
+    '/v1/notes/:id',
+    validateRequest(getSingleNoteSchema),
+    getNoteHandler,
+  );
   app.put(
     '/v1/notes/:id',
     validateRequest(updateNoteSchema),
@@ -32,7 +37,7 @@ const routes = (app: Express) => {
     deleteNoteHandler,
   );
 
-  app.get('/v1/ping', validateRequest(object({})), ({}, res: Response) => {
+  app.get('/v1/ping', validateRequest(object({})), (_, res: Response) => {
     res.status(200).send({
       pong: true,
     });

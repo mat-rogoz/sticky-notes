@@ -17,9 +17,23 @@ export const getSingleNote = async (noteId: string): Promise<Note> => {
   return noteRepository.findOneOrFail({ where: { id: noteId } });
 };
 
-export const getAllNotes = async (): Promise<Note[]> => {
+export const getNotes = async (
+  limit: number,
+  offset: number,
+): Promise<Note[]> => {
   const noteRepository = getRepository(Note);
-  return noteRepository.find();
+  return noteRepository.find({
+    order: {
+      createdAt: 'DESC',
+    },
+    take: limit,
+    skip: offset,
+  });
+};
+
+export const countAllNotes = async (): Promise<number> => {
+  const noteRepository = getRepository(Note);
+  return noteRepository.count();
 };
 
 export const updateNote = async (

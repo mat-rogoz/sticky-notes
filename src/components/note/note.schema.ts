@@ -29,7 +29,7 @@ export const updateNoteSchema = object({
   }),
 });
 
-export const getNoteSchema = object({
+export const getSingleNoteSchema = object({
   params: object({
     id: number().integer().min(0).required(ID_MISSING_ERROR),
   }),
@@ -38,5 +38,12 @@ export const getNoteSchema = object({
 export const deleteNoteSchema = object({
   params: object({
     id: number().integer().min(0).required(ID_MISSING_ERROR),
+  }),
+});
+
+export const getNotesSchema = object({
+  query: object({
+    limit: number().integer().min(1).max(50),
+    page: number().integer().min(1),
   }),
 });
