@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "31c226bf-0bee-49f5-b594-d0d36d9b0e05",
+		"name": "Sticky Notes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "notes",
+			"item": [
+				{
+					"name": "Create note",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/v1/notes?title=Default title&message=Default message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"notes"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "Default title"
+								},
+								{
+									"key": "message",
+									"value": "Default message"
+								},
+								{
+									"key": "format",
+									"value": "jsonp",
+									"disabled": true
+								},
+								{
+									"key": "callback",
+									"value": "console.log",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single note",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/v1/notes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"notes",
+								"1"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "jsonp",
+									"disabled": true
+								},
+								{
+									"key": "callback",
+									"value": "console.log",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete note",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/v1/notes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"notes",
+								"1"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "jsonp",
+									"disabled": true
+								},
+								{
+									"key": "callback",
+									"value": "console.log",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update note",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/v1/notes/1?title=New title&message=New message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"notes",
+								"1"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "jsonp",
+									"disabled": true
+								},
+								{
+									"key": "callback",
+									"value": "console.log",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "New title"
+								},
+								{
+									"key": "message",
+									"value": "New message"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all notes",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/v1/notes?page=1&limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"notes"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "jsonp",
+									"disabled": true
+								},
+								{
+									"key": "callback",
+									"value": "console.log",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pong",
+			"item": [
+				{
+					"name": "Ping",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/v1/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"v1",
+								"ping"
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "jsonp",
+									"disabled": true
+								},
+								{
+									"key": "callback",
+									"value": "console.log",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check if app is running",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
