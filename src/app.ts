@@ -2,7 +2,7 @@ import express from 'express';
 import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import config from './config/config';
-import responseFormatter from './middlewere/response-formatter';
+import responseFormatter from './middleware/response-formatter';
 import routes from './routes';
 import logger from './utils/logger';
 

@@ -1,6 +1,6 @@
 import { Express, Response } from 'express';
 import { object } from 'yup';
-import validateRequest from './middlewere/validate-request';
+import validateRequest from './middleware/validate-request';
 import {
   createNoteSchema,
   deleteNoteSchema,
