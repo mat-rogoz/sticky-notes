@@ -5,6 +5,7 @@ const STRING_MAX_LENGTH = 255;
 const TITLE_MISSING_ERROR = 'The title parameter is missing';
 const MESSAGE_MISSING_ERROR = 'The message parameter is missing';
 const ID_MISSING_ERROR = 'The id parameter is missing';
+const MISSING_ANY_PARAMETER_ERROR = 'No field with value to change was passed';
 
 export const createNoteSchema = object({
   query: object({
@@ -22,7 +23,13 @@ export const createNoteSchema = object({
 export const updateNoteSchema = object({
   query: object({
     title: string().min(STRING_MIN_LENGTH).max(STRING_MAX_LENGTH),
-    message: string().min(STRING_MIN_LENGTH).max(STRING_MAX_LENGTH),
+    message: string()
+      .min(STRING_MIN_LENGTH)
+      .max(STRING_MAX_LENGTH)
+      .when('title', {
+        is: (value: string | undefined) => !value,
+        then: string().required(MISSING_ANY_PARAMETER_ERROR),
+      }),
   }),
   params: object({
     id: number().integer().min(0).required(ID_MISSING_ERROR),

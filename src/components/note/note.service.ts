@@ -37,21 +37,14 @@ export const countAllNotes = async (): Promise<number> => {
 };
 
 export const updateNote = async (
-  note: Note,
   noteId: string,
-  title: string | undefined,
-  message: string | undefined,
-): Promise<void> => {
+  payload: Record<string, string>,
+): Promise<any> =>
   getRepository(Note)
     .createQueryBuilder()
-    .update(Note)
-    .set({
-      title: title || note.title,
-      message: message || note.message,
-    })
+    .update(Note, payload)
     .where('id = :id', { id: noteId })
     .execute();
-};
 
 export const deleteNote = async (noteId: string): Promise<void> => {
   const noteRepository = getRepository(Note);
