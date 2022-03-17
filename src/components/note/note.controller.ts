@@ -54,10 +54,14 @@ export const getAllNotesHandler = async (req: Request, res: Response) => {
 
 export const updateNoteHandler = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const queryString = req.query as Record<string, string>;
+  const { title, message } = req.query as Record<string, string>;
+
+  const payload: Record<string, string> = {};
+  if (title) payload.title = title;
+  if (message) payload.message = message;
 
   try {
-    await updateNote(id, queryString);
+    await updateNote(id, payload);
     const updatedNote = await getSingleNote(id);
 
     return res.status(200).send(updatedNote);
