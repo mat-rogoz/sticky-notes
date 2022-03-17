@@ -48,7 +48,6 @@ module.exports = {
       files: ['*.ts', '*.tsx'],
       rules: {
         radix: 'off',
-        'no-eval': 'off',
         'no-undef': 'off',
         'no-use-before-define': 'off',
         'no-shadow': 'off',
